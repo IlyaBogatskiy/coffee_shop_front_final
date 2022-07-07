@@ -2,14 +2,36 @@
 <div class="col-md-6 offset-md-3">
   <form (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label> Номер сорта кофе </label>
-      <input type="text" class="form-control" id="coffeeVarietyId"
+      <label> Наименование сорта кофе </label>
+      <select type="text" class="form-control" id="coffeeVarietyId"
              [(ngModel)]="orderItem.coffeeVarietyId" name="coffeeVarietyId">
+        <option value="1">Американо</option>
+        <option value="2">Капучино</option>
+        <option value="3">Раф</option>
+        <option value="4">Флэт Уайт</option>
+        <option value="5">Латте</option>
+        <option value="6">Эспрессо</option>
+        <option value="7">Айс Латте</option>
+        <option value="8">Фраппе</option>
+        <option value="9">Бамбл</option>
+        <option value="10">Эспрессо-тоник</option>
+      </select>
     </div>
     <div class="form-group">
       <label> Количество чашек </label>
-      <input type="text" class="form-control" id="cups"
+      <select type="text" class="form-control" id="cups"
              [(ngModel)]="orderItem.cups" name="cups">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+      </select>
     </div>
     <div class="form-group">
       <label> Имя заказчика </label>
