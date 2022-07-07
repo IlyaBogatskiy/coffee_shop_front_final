@@ -10,6 +10,11 @@
   </tr>
   </thead>
   <tbody>
+  <tr *ngIf="orders.length == 0">
+    <td class="font-italic text-center" colspan="5">
+      Список заказов пуст!
+    </td>
+  </tr>
   <tr *ngFor="let order of orders">
     <td>{{ order.id }}</td>
     <td>{{ order.customerName }}</td>

@@ -10,7 +10,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class OrderListComponent implements OnInit {
 
-  orders?: Order[];
+  orders: Order[] = [];
 
   constructor(private orderService: OrderService, private route: Router) {
   }
