@@ -13,7 +13,7 @@ export class CreateOrderComponent implements OnInit {
 
   order: Order = new Order();
   orderItem: OrderItem = new OrderItem();
-  orderItems: OrderItem[] = [];
+  orderItems?: OrderItem[];
 
   constructor(private orderService: OrderService,
               private router: Router) {}

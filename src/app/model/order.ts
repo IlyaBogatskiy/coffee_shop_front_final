@@ -2,15 +2,15 @@ import {OrderItem} from "./order-item";
 
 export class Order {
 
-  id: number | undefined;
+  id?: number;
 
-  orderDate: Date | undefined;
+  orderDate?: Date;
 
-  customerName: string | undefined;
+  customerName?: string;
 
-  deliveryAddress: string | undefined;
+  deliveryAddress?: string;
 
-  orderItems: OrderItem[] | undefined;
+  orderItems?: OrderItem[];
 
-  orderPrice: string | undefined;
+  orderPrice?: string;
 }

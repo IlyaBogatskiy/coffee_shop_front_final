@@ -1,10 +1,10 @@
 export class CoffeeVariety {
 
-  id: number | undefined;
+  id?: number;
 
-  name: string | undefined;
+  name?: string;
 
-  price: string | undefined;
+  price?: string;
 
-  available: boolean | undefined;
+  available?: boolean;
 }

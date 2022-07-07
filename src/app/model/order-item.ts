@@ -1,10 +1,10 @@
 export class OrderItem {
 
-  id: number | undefined;
+  id?: number;
 
-  coffeeVarietyId: number | undefined;
+  coffeeVarietyId?: number;
 
-  cups: number | undefined;
+  cups?: number;
 
-  orderItemPrice: string | undefined;
+  orderItemPrice?: string;
 }

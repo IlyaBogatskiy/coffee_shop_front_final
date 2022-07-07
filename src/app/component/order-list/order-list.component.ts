@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Order} from "../../model/order";
 import {OrderService} from "../../service/order.service";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-order-list',
@@ -9,9 +10,9 @@ import {OrderService} from "../../service/order.service";
 })
 export class OrderListComponent implements OnInit {
 
-  orders: Order[] | undefined;
+  orders?: Order[];
 
-  constructor(private orderService: OrderService) {
+  constructor(private orderService: OrderService, private route: Router) {
   }
 
   ngOnInit(): void {
@@ -22,5 +23,16 @@ export class OrderListComponent implements OnInit {
     this.orderService.getOrderList().subscribe(data => {
       this.orders = data;
     });
+  }
+
+  deleteOrderById(id: number) {
+    this.orderService.deleteOrderById(id).subscribe(data => {
+      console.log(data);
+      this.getOrders();
+    });
+  }
+
+  orderDetails(id: number) {
+    this.route.navigate(['order-details', id]);
   }
 }

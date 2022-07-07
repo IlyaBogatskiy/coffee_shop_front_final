@@ -8,21 +8,26 @@ import {Order} from "../model/order";
 })
 export class OrderService {
 
-  private httpClient: HttpClient;
-
-  private allOrdersURL = "http://localhost:8083/coffee_shop/api/v1/order/";
+  private baseURL = "http://localhost:8083/coffee_shop/api/v1/order";
   private createOrderURL = "http://localhost:8083/coffee_shop/api/v1/order/create";
 
-  constructor(httpClient: HttpClient) {
-    this.httpClient = httpClient;
+  constructor(private httpClient: HttpClient) {
   }
 
   getOrderList(): Observable<Order[]> {
-    return this.httpClient.get<Order[]>(`${this.allOrdersURL}`);
+    return this.httpClient.get<Order[]>(`${this.baseURL}`);
   }
 
   createOrder(order: Order): Observable<Order> {
     console.log(order);
     return this.httpClient.post<Order>(`${this.createOrderURL}`, order);
+  }
+
+  getOrderById(id: number): Observable<Order> {
+    return this.httpClient.get<Order>(`${this.baseURL}/${id}`);
+  }
+
+  deleteOrderById(id: number): Observable<Object> {
+    return this.httpClient.delete(`${this.baseURL}/${id}`);
   }
 }
