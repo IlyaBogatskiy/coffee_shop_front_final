@@ -1,0 +1,18 @@
+<h2> Список сортов кофе </h2>
+<h4> Выберите номер понравившегося Вам сорта кофе и укажите его в заказе </h4>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th> No. </th>
+    <th> Наименование сорта кофе </th>
+    <th> Цена за одну чашку TGR </th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let variety of coffeeVarieties">
+    <td>{{ variety.id }}</td>
+    <td>{{ variety.name }}</td>
+    <td>{{ variety.price }}</td>
+  </tr>
+  </tbody>
+</table>

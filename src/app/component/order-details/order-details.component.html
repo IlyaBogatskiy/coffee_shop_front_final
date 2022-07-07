@@ -1,15 +1,24 @@
-<!--<h3> Детали заказа </h3>-->
-<!--<div>-->
-<!--  <div>-->
-<!--    <label><b> Дата заказа: </b></label> {{order.orderDate}}-->
-<!--  </div>-->
-<!--  <div>-->
-<!--    <label><b> Номер сорта кофе: </b></label> {{order.orderItems}}-->
-<!--  </div>-->
-<!--  <div>-->
-<!--    <label><b> Количество чашек: </b></label> {{order.orderItems}}-->
-<!--  </div>-->
-<!--  <div>-->
-<!--    <label><b> Цена позиции заказа: </b></label> {{order.orderItems}}-->
-<!--  </div>-->
-<!--</div>-->
+<h3> Детали заказа </h3>
+
+<div>
+  <div>
+    <label><b> Дата создания заказа: </b></label> {{ order.orderDate }}
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th> Номер сорта кофе</th>
+      <th> Количество чашек</th>
+      <th> Цена позиции заказа</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let orderItem of order.orderItems">
+      <td>{{ orderItem.coffeeVarietyId }}</td>
+      <td>{{ orderItem.cups }}</td>
+      <td>{{ orderItem.orderItemPrice }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

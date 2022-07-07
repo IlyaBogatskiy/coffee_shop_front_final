@@ -13,11 +13,14 @@ import {CoffeeVariety} from "../../model/coffee-variety";
 export class OrderDetailsComponent implements OnInit {
 
   id?: number;
-  order?: Order;
-  orderItem?: OrderItem;
-  coffeeVariety?: CoffeeVariety;
+  order: Order;
 
-  constructor(private route: ActivatedRoute, private orderService: OrderService) {
+  constructor(
+    private route: ActivatedRoute,
+    private orderService: OrderService,
+    order: Order,
+  ) {
+    this.order = order;
   }
 
   ngOnInit(): void {
