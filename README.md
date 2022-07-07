@@ -1,5 +1,7 @@
 # CoffeeShopFront
 
+Фронт часть приложения интернет-кафе
+
 ![image](https://user-images.githubusercontent.com/107244668/177881105-ae6f2980-a42d-48f4-9d26-ee891951d72f.png)
 
 ![image](https://user-images.githubusercontent.com/107244668/177881146-8491d77a-e6e3-4782-a72c-e37e95cfc285.png)
