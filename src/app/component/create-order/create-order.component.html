@@ -1,8 +1,8 @@
-<h3> Новый заказ </h3>
+<h2> Новый заказ </h2>
 <div class="col-md-6 offset-md-3">
   <form (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label> Наименование сорта кофе </label>
+      <label> ➡ Наименование сорта кофе </label>
       <select type="text" class="form-control" id="coffeeVarietyId"
              [(ngModel)]="orderItem.coffeeVarietyId" name="coffeeVarietyId">
         <option value="1">Американо</option>
@@ -17,8 +17,9 @@
         <option value="10">Эспрессо-тоник</option>
       </select>
     </div>
+    <h1></h1>
     <div class="form-group">
-      <label> Количество чашек </label>
+      <label> ➡ Количество чашек </label>
       <select type="text" class="form-control" id="cups"
              [(ngModel)]="orderItem.cups" name="cups">
         <option value="1">1</option>
@@ -33,16 +34,19 @@
         <option value="10">10</option>
       </select>
     </div>
+    <h1></h1>
     <div class="form-group">
-      <label> Имя заказчика </label>
+      <label> ➡ Имя заказчика </label>
       <input type="text" class="form-control" id="customerName"
              [(ngModel)]="order.customerName" name="customerName">
     </div>
+    <h1></h1>
     <div class="form-group">
-      <label> Адрес доставки </label>
+      <label> ➡ Адрес доставки </label>
       <input type="text" class="form-control" id="deliveryAddress"
              [(ngModel)]="order.deliveryAddress" name="deliveryAddress">
     </div>
+    <h1></h1>
     <button class="btn btn-success" type="submit"> Заказать</button>
   </form>
 </div>

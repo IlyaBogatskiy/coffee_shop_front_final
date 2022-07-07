@@ -2,11 +2,11 @@
 <table class="table table-striped">
   <thead>
   <tr>
-    <th> No. </th>
-    <th> Имя заказчика </th>
-    <th> Адрес доставки </th>
-    <th> Сумма заказа </th>
-    <th> Действия </th>
+    <th> No.</th>
+    <th> Имя заказчика</th>
+    <th> Адрес доставки</th>
+    <th> Сумма заказа</th>
+    <th> Действия</th>
   </tr>
   </thead>
   <tbody>
@@ -21,8 +21,9 @@
     <td>{{ order.deliveryAddress }}</td>
     <td>{{ order.orderPrice }}</td>
     <td>
-      <button (click)="deleteOrderById(order.id!)" class="btn btn-danger" style="margin-left: 10px"> Удалить </button>
-      <button (click)="orderDetails(order.id!)" class="btn btn-info" style="margin-left: 10px"> Детали </button>
+      <button (click)="deleteOrderById(order.id!)" class="btn btn-danger" style="margin-left: 10px"> Удалить
+      </button>
+      <button (click)="orderDetails(order.id!)" class="btn btn-info" style="margin-left: 10px"> Детали</button>
     </td>
   </tr>
   </tbody>
