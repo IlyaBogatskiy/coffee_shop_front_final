@@ -1,13 +1,9 @@
 # CoffeeShopFront
 
-Фронт для Coffee Shop
+Фронт часть приложения интернет-кафе
 
-![image](https://user-images.githubusercontent.com/107244668/177796991-668a2c66-6f2a-41c0-8536-807b01d8d1f7.png)
+![image](https://user-images.githubusercontent.com/107244668/177881105-ae6f2980-a42d-48f4-9d26-ee891951d72f.png)
 
-![image](https://user-images.githubusercontent.com/107244668/177797074-979df250-4d20-480e-a18d-fb7b399605e0.png)
+![image](https://user-images.githubusercontent.com/107244668/177881146-8491d77a-e6e3-4782-a72c-e37e95cfc285.png)
 
-![image](https://user-images.githubusercontent.com/107244668/177797148-551169c1-41ee-431f-936a-2429b776c344.png)
-
-![image](https://user-images.githubusercontent.com/107244668/177799313-616e9daa-ca06-4ace-b6e2-57cee776123d.png)
-
-![image](https://user-images.githubusercontent.com/107244668/177799456-b21cc599-62a4-4ed9-8b76-3f48e2f16950.png)
+![image](https://user-images.githubusercontent.com/107244668/177881203-eac8b555-6c79-477e-95c7-14ab8e7f3b15.png)
