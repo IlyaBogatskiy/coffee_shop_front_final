@@ -2,8 +2,8 @@
 
 Фронт часть приложения интернет-кафе
 
-![image](https://user-images.githubusercontent.com/107244668/177881105-ae6f2980-a42d-48f4-9d26-ee891951d72f.png)
+![image](https://user-images.githubusercontent.com/107244668/177883414-6f50c387-f2fd-402b-bb16-491897bdcf92.png)
 
-![image](https://user-images.githubusercontent.com/107244668/177881146-8491d77a-e6e3-4782-a72c-e37e95cfc285.png)
+![image](https://user-images.githubusercontent.com/107244668/177883459-b26e4c51-6690-4ad5-956d-724794d005c3.png)
 
-![image](https://user-images.githubusercontent.com/107244668/177881203-eac8b555-6c79-477e-95c7-14ab8e7f3b15.png)
+![image](https://user-images.githubusercontent.com/107244668/177883496-ccfa7023-e811-49ed-9cd9-90da4f4de384.png)
