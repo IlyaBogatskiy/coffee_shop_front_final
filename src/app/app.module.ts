@@ -13,6 +13,7 @@ import { OrderItemComponent } from './component/order-item/order-item.component'
 import {OrderItem} from "./model/order-item";
 import {Order} from "./model/order";
 import { CoffeeVarietyListComponent } from './component/coffee-variety-list/coffee-variety-list.component';
+import {NgxPaginationModule} from "ngx-pagination";
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CoffeeVarietyListComponent } from './component/coffee-variety-list/coff
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
   ],
   providers: [OrderItem, Order],
   bootstrap: [AppComponent]

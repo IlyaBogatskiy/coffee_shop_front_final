@@ -11,6 +11,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 export class OrderListComponent implements OnInit {
 
   orders: Order[] = [];
+  p: number = 1;
 
   constructor(private orderService: OrderService, private route: Router) {
   }

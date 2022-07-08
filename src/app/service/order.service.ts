@@ -8,8 +8,8 @@ import {Order} from "../model/order";
 })
 export class OrderService {
 
-  private baseURL = "http://localhost:8083/coffee_shop/api/v1/order";
-  private createOrderURL = "http://localhost:8083/coffee_shop/api/v1/order/create";
+  private baseURL = "http://localhost:8080/coffee_shop/api/v1/order";
+  private createOrderURL = "http://localhost:8080/coffee_shop/api/v1/order/create";
 
   constructor(private httpClient: HttpClient) {
   }

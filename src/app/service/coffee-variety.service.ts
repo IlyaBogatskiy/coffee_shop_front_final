@@ -9,7 +9,7 @@ import {HttpClient} from "@angular/common/http";
 })
 export class CoffeeVarietyService {
 
-  private baseURL = "http://localhost:8083/coffee_shop/api/v1/variety";
+  private baseURL = "http://localhost:8080/coffee_shop/api/v1/variety";
   private getAvailableCoffeeVarietiesURL = this.baseURL + "/available";
 
   constructor(private httpClient: HttpClient) { }

@@ -15,7 +15,7 @@
       Список заказов пуст!
     </td>
   </tr>
-  <tr *ngFor="let order of orders">
+  <tr *ngFor="let order of orders | paginate: { itemsPerPage: 9, currentPage: p }">
     <td>{{ order.id }}</td>
     <td>{{ order.customerName }}</td>
     <td>{{ order.deliveryAddress }}</td>
@@ -23,8 +23,14 @@
     <td>
       <button (click)="deleteOrderById(order.id!)" class="btn btn-danger" style="margin-left: 10px"> Удалить
       </button>
-      <button (click)="orderDetails(order.id!)" class="btn btn-info" style="margin-left: 10px"> Детали </button>
+      <button (click)="orderDetails(order.id!)" class="btn btn-info" style="margin-left: 10px"> Детали</button>
     </td>
   </tr>
   </tbody>
 </table>
+<h1></h1>
+<div class="fixed-bottom">
+  <div class="text-center">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+</div>
