@@ -14,6 +14,11 @@ import {OrderItem} from "./model/order-item";
 import {Order} from "./model/order";
 import { CoffeeVarietyListComponent } from './component/coffee-variety-list/coffee-variety-list.component';
 import {NgxPaginationModule} from "ngx-pagination";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatPaginatorModule} from "@angular/material/paginator";
+import {MatTableModule} from "@angular/material/table";
+import {MatCardModule} from "@angular/material/card";
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -30,7 +35,12 @@ import {NgxPaginationModule} from "ngx-pagination";
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    BrowserAnimationsModule,
+    MatPaginatorModule,
+    MatTableModule,
+    MatCardModule,
+    MatIconModule,
   ],
   providers: [OrderItem, Order],
   bootstrap: [AppComponent]

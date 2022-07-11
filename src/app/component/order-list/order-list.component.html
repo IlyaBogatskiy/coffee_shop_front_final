@@ -1,41 +1,84 @@
-<h2> ☕ Список заказов </h2>
-<table class="table table-striped">
-  <thead>
-  <tr>
-    <th> No. </th>
-    <th> Имя заказчика </th>
-    <th> Адрес доставки </th>
-    <th> Сумма заказа </th>
-    <th> Действия </th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngIf="orders.length == 0">
-    <td class="font-italic text-center" colspan="5">
-      Список заказов пуст!
-    </td>
-  </tr>
-  <tr *ngFor="let order of orders | paginate: { itemsPerPage: 9, currentPage: p }">
-    <td>{{ order.id }}</td>
-    <td>{{ order.customerName }}</td>
-    <td>{{ order.deliveryAddress }}</td>
-    <td>{{ order.orderPrice }}</td>
-    <td>
-      <button (click)="deleteOrderById(order.id!)" class="btn btn-danger" style="margin-left: 10px"> Удалить
-      </button>
-      <button (click)="orderDetails(order.id!)" class="btn btn-info" style="margin-left: 10px"> Детали</button>
-    </td>
-  </tr>
-  </tbody>
-</table>
-<h1></h1>
-<div class="fixed-bottom">
-  <div class="text-center">
-    <pagination-controls (pageChange)="p = $event"
-                         [directionLinks]="true"
-                         [autoHide]="true"
-                         previousLabel=""
-                         nextLabel="">
-    </pagination-controls>
+<!--<h2> ☕ Список заказов </h2>-->
+<!--<table class="table table-striped">-->
+<!--  <thead>-->
+<!--  <tr>-->
+<!--    <th> No. </th>-->
+<!--    <th> Имя заказчика </th>-->
+<!--    <th> Адрес доставки </th>-->
+<!--    <th> Сумма заказа </th>-->
+<!--    <th> Действия </th>-->
+<!--  </tr>-->
+<!--  </thead>-->
+<!--  <tbody>-->
+<!--  <tr *ngIf="orders.length === 0">-->
+<!--    <td class="font-italic text-center" colspan="5">-->
+<!--      Список заказов пуст!-->
+<!--    </td>-->
+<!--  </tr>-->
+<!--  <tr *ngFor="let order of orders | paginate: { id: 'orders',-->
+<!--                                                     itemsPerPage: pageSize,-->
+<!--                                                      currentPage: page-->
+<!--                                                   }">-->
+<!--    <td>{{ order.id }}</td>-->
+<!--    <td>{{ order.customerName }}</td>-->
+<!--    <td>{{ order.deliveryAddress }}</td>-->
+<!--    <td>{{ order.orderPrice }}</td>-->
+<!--    <td>-->
+<!--      <button (click)="deleteOrderById(order.id!)" class="btn btn-danger" style="margin-left: 10px"> Удалить-->
+<!--      </button>-->
+<!--      <button (click)="orderDetails(order.id!)" class="btn btn-info" style="margin-left: 10px"> Детали</button>-->
+<!--    </td>-->
+<!--  </tr>-->
+<!--  </tbody>-->
+<!--</table>-->
+<!--<h1></h1>-->
+<!--<div class="fixed-bottom">-->
+<!--  <div class="text-center">-->
+<!--    <pagination-controls (pageChange)="page = $event"-->
+<!--                         [directionLinks]="true"-->
+<!--                         [autoHide]="true"-->
+<!--                         previousLabel=""-->
+<!--                         nextLabel="">-->
+<!--    </pagination-controls>-->
+<!--  </div>-->
+<!--</div>-->
+
+<div class="container">
+  <h2 class="text-black"> ☕ Список заказов </h2>
+  <div class="table-responsive">
+    <table class="table table-bordered p-0 m-0">
+      <thead>
+      <tr>
+        <th class="text-center"> No.</th>
+        <th class="text-center"> Имя заказчика</th>
+        <th class="text-center"> Адрес доставки</th>
+        <th class="text-center"> Сумма заказа</th>
+        <th class="text-center"> Действия</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr class="mat-row" *ngFor="let order of orders">
+        <td class="text-center">{{ order.id }}</td>
+        <td class="text-center">{{ order.customerName }}</td>
+        <td class="text-center">{{ order.deliveryAddress }}</td>
+        <td class="text-center">{{ order.orderPrice }}</td>
+        <td class="text-center">
+          <button (click)="deleteOrderById(order.id!)" class="btn btn-danger" style="margin-left: 10px"> Удалить
+          </button>
+          <button (click)="orderDetails(order.id!)" class="btn btn-info" style="margin-left: 10px"> Детали</button>
+        </td>
+      </tr>
+      <tr class="mat-row" *ngIf="orders.length === 0">
+        <td colspan="6" class="text-center"> Список заказов пуст!</td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="fixed-bottom">
+      <mat-paginator [pageSizeOptions]="pageSizeOptions"
+                     [pageSize]="10"
+                     [length]="totalElements"
+                     (page)="nextPage($event)">
+      </mat-paginator>
+    </div>
   </div>
 </div>

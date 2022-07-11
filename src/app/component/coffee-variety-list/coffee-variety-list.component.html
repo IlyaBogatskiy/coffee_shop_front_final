@@ -2,16 +2,16 @@
 <table class="table table-striped">
   <thead>
   <tr>
-    <th> No. </th>
-    <th> Наименование сорта кофе </th>
-    <th> Цена за одну чашку TGR </th>
+    <th class="text-center"> No. </th>
+    <th class="text-center"> Наименование сорта кофе </th>
+    <th class="text-center"> Цена за одну чашку TGR </th>
   </tr>
   </thead>
   <tbody>
   <tr *ngFor="let variety of coffeeVarieties">
-    <td>{{ variety.id }}</td>
-    <td>{{ variety.name }}</td>
-    <td>{{ variety.price }}</td>
+    <td class="text-center">{{ variety.id }}</td>
+    <td class="text-center">{{ variety.name }}</td>
+    <td class="text-center">{{ variety.price }}</td>
   </tr>
   </tbody>
 </table>

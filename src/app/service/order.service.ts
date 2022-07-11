@@ -14,8 +14,9 @@ export class OrderService {
   constructor(private httpClient: HttpClient) {
   }
 
-  getOrderList(): Observable<Order[]> {
-    return this.httpClient.get<Order[]>(`${this.baseURL}`);
+  getOrderList(request: any) {
+    const params = request;
+    return this.httpClient.get(`${this.baseURL}`, {params});
   }
 
   createOrder(order: Order): Observable<Order> {
@@ -24,10 +25,12 @@ export class OrderService {
   }
 
   getOrderById(id: number): Observable<Order> {
+    console.log(id);
     return this.httpClient.get<Order>(`${this.baseURL}/${id}`);
   }
 
   deleteOrderById(id: number): Observable<Object> {
+    console.log(id);
     return this.httpClient.delete(`${this.baseURL}/${id}`);
   }
 }

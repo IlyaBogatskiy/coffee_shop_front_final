@@ -1,7 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {Order} from "../../model/order";
 import {OrderService} from "../../service/order.service";
-import {ActivatedRoute, Router} from "@angular/router";
+import {Router} from "@angular/router";
+import {PageEvent} from "@angular/material/paginator";
 
 @Component({
   selector: 'app-order-list',
@@ -11,26 +12,46 @@ import {ActivatedRoute, Router} from "@angular/router";
 export class OrderListComponent implements OnInit {
 
   orders: Order[] = [];
-  p: number = 1;
+  loading!: boolean;
+
+  totalElements: number = 0;
+  pageSizeOptions: number[] = [5, 10, 25, 50];
 
   constructor(private orderService: OrderService, private route: Router) {
   }
 
   ngOnInit(): void {
-    this.getOrders();
+    this.getOrders({page: "0", size: "10"});
   }
 
-  private getOrders() {
-    this.orderService.getOrderList().subscribe(data => {
-      this.orders = data;
-    });
+  private getOrders(request: any) {
+    this.loading = true;
+    this.orderService.getOrderList(request)
+      .subscribe(data => {
+        this.orders = (data as any)['content'];
+        this.totalElements = (data as any)['totalElements'];
+        this.loading = false;
+      }, error => {
+        this.loading = false;
+      });
+  }
+
+  nextPage(event: PageEvent) {
+    const request = {};
+    (request as any)['page'] = event.pageIndex.toString();
+    (request as any)['size'] = event.pageSize.toString();
+    this.getOrders(request);
   }
 
   deleteOrderById(id: number) {
-    this.orderService.deleteOrderById(id).subscribe(data => {
-      console.log(data);
-      this.getOrders();
-    });
+    this.orderService.deleteOrderById(id)
+      .subscribe(data => {
+          this.orders = this.orders.filter(order => order.id !== id);
+          console.log('Заказ успешно удален!');
+        }, error => {
+          console.log(error.error.message);
+        }
+      );
   }
 
   orderDetails(id: number) {
