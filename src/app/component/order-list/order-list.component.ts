@@ -4,6 +4,9 @@ import {OrderService} from "../../service/order.service";
 import {Router} from "@angular/router";
 import {PageEvent} from "@angular/material/paginator";
 import {MatTableDataSource} from "@angular/material/table";
+import {CoffeeVarietyListComponent} from "../coffee-variety-list/coffee-variety-list.component";
+import {MatDialog} from "@angular/material/dialog";
+import {OrderDetailsComponent} from "../order-details/order-details.component";
 
 @Component({
   selector: 'app-order-list',
@@ -19,7 +22,9 @@ export class OrderListComponent implements OnInit {
   totalElements: number = 0;
   pageSizeOptions: number[] = [5, 10, 25, 50];
 
-  constructor(private orderService: OrderService, private route: Router) {
+  constructor(private orderService: OrderService,
+              private route: Router,
+              private dialog: MatDialog) {
   }
 
   ngOnInit(): void {

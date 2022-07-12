@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Order} from "../../model/order";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {OrderService} from "../../service/order.service";
 import {OrderItem} from "../../model/order-item";
 import {CoffeeVariety} from "../../model/coffee-variety";
@@ -15,16 +15,16 @@ export class OrderDetailsComponent implements OnInit {
   id?: number;
   order: Order;
 
-  constructor(
-    private route: ActivatedRoute,
-    private orderService: OrderService,
-    order: Order,
+  constructor(private activateRoute: ActivatedRoute,
+              private orderService: OrderService,
+              private route: Router,
+              order: Order,
   ) {
     this.order = order;
   }
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.params['id'];
+    this.id = this.activateRoute.snapshot.params['id'];
     this.order = new Order();
     if (this.id != null) {
       this.orderService.getOrderById(this.id).subscribe(data => {
@@ -33,4 +33,7 @@ export class OrderDetailsComponent implements OnInit {
     }
   }
 
+  toOrderList() {
+    this.route.navigate(['orders']);
+  }
 }
