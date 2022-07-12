@@ -6,9 +6,11 @@ table {
 td, th{
   border: solid 1px #ccc;
 }
+
 .collapsed{
   border-collapse: collapse;
 }
+
 .separated{
   border-collapse: separate;
 }
