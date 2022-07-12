@@ -1,8 +1,9 @@
-import {Component, HostListener, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Order} from "../../model/order";
 import {OrderService} from "../../service/order.service";
 import {Router} from "@angular/router";
 import {PageEvent} from "@angular/material/paginator";
+import {MatTableDataSource} from "@angular/material/table";
 
 @Component({
   selector: 'app-order-list',
@@ -12,8 +13,9 @@ import {PageEvent} from "@angular/material/paginator";
 export class OrderListComponent implements OnInit {
 
   orders: Order[] = [];
-  loading!: boolean;
+  dataSource: MatTableDataSource<Order> = new MatTableDataSource();
 
+  page: number = 0;
   totalElements: number = 0;
   pageSizeOptions: number[] = [5, 10, 25, 50];
 
@@ -25,14 +27,12 @@ export class OrderListComponent implements OnInit {
   }
 
   private getOrders(request: any) {
-    this.loading = true;
     this.orderService.getOrderList(request)
       .subscribe(data => {
         this.orders = (data as any)['content'];
         this.totalElements = (data as any)['totalElements'];
-        this.loading = false;
       }, error => {
-        this.loading = false;
+        console.log(error.error.message);
       });
   }
 

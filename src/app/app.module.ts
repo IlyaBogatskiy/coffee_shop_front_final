@@ -13,12 +13,17 @@ import { OrderItemComponent } from './component/order-item/order-item.component'
 import {OrderItem} from "./model/order-item";
 import {Order} from "./model/order";
 import { CoffeeVarietyListComponent } from './component/coffee-variety-list/coffee-variety-list.component';
-import {NgxPaginationModule} from "ngx-pagination";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatTableModule} from "@angular/material/table";
-import {MatCardModule} from "@angular/material/card";
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
+import {MatDialogModule} from "@angular/material/dialog";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {MatSelectModule} from "@angular/material/select";
+import {MatCardModule} from "@angular/material/card";
 
 @NgModule({
   declarations: [
@@ -35,12 +40,17 @@ import {MatIconModule} from "@angular/material/icon";
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgxPaginationModule,
     BrowserAnimationsModule,
     MatPaginatorModule,
     MatTableModule,
-    MatCardModule,
+    MatToolbarModule,
+    MatButtonModule,
     MatIconModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatCardModule
   ],
   providers: [OrderItem, Order],
   bootstrap: [AppComponent]

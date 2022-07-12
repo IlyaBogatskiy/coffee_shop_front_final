@@ -3,6 +3,8 @@ import {Order} from "../../model/order";
 import {OrderItem} from "../../model/order-item";
 import {OrderService} from "../../service/order.service";
 import {Router} from "@angular/router";
+import {MatDialogRef} from "@angular/material/dialog";
+import {OrderListComponent} from "../order-list/order-list.component";
 
 @Component({
   selector: 'app-create-order',
@@ -16,7 +18,8 @@ export class CreateOrderComponent implements OnInit {
   orderItems?: OrderItem[];
 
   constructor(private orderService: OrderService,
-              private router: Router) {}
+              private router: Router,
+              private ref: MatDialogRef<CreateOrderComponent>) {}
 
   ngOnInit(): void {
   }
@@ -39,7 +42,6 @@ export class CreateOrderComponent implements OnInit {
         orderPrice: this.order.orderPrice
       },
     ).subscribe(data => {
-        this.goToOrderList();
         console.log(data);
       },
       error => console.log(error)
@@ -50,9 +52,10 @@ export class CreateOrderComponent implements OnInit {
     console.log(this.order);
     console.log(this.orderItem);
     this.createOrder();
+    this.ref.close('save');
   }
 
-  goToOrderList() {
-    this.router.navigate(['/orders']);
-  }
+  // goToOrderList() {
+  //   this.router.navigate(['/orders']);
+  // }
 }
