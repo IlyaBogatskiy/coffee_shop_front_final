@@ -7,16 +7,16 @@
   <table>
     <thead>
     <tr>
-      <th class="text-center"> Номер сорта кофе </th>
-      <th class="text-center"> Количество чашек </th>
-      <th class="text-center"> Цена позиции заказа </th>
+      <th> Номер сорта кофе </th>
+      <th> Количество чашек </th>
+      <th> Цена позиции заказа </th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let orderItem of order.orderItems">
-      <td class="text-center">{{ orderItem.coffeeVarietyId }}</td>
-      <td class="text-center">{{ orderItem.cups }}</td>
-      <td class="text-center">{{ orderItem.orderItemPrice }}</td>
+      <td>{{ orderItem.coffeeVarietyId }}</td>
+      <td>{{ orderItem.cups }}</td>
+      <td>{{ orderItem.orderItemPrice }}</td>
     </tr>
     </tbody>
   </table>
